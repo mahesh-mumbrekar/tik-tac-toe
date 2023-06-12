@@ -12,3 +12,16 @@ function closePlayerConfig() {
 
     
 }
+
+function savePlayerConfig(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const enteredPlayerName = formData.get('username').trim();
+    
+}
+
+/*function savePlayerConfig(event) {
+  event.preventDefault();
+  const enteredPlayername = event.target.elements.playername.value;
+  console.log(enteredPlayername);
+}*/
