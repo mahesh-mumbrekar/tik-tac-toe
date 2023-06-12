@@ -16,7 +16,14 @@ function closePlayerConfig() {
 function savePlayerConfig(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const enteredPlayerName = formData.get('username').trim();
+  const enteredPlayerName = formData.get('username').trim();
+
+
+  if (!enteredPlayerName) {
+    errorsOutputElement.textContent = 'Please enter a valid name!';
+    return;
+  }
+
     
 }
 
