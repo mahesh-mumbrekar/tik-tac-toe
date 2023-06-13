@@ -1,27 +1,28 @@
 function openPlayerConfig() {
-    PlayerConfigOverlayElement.style.display = 'block'
-    backDropElement.style.display='block'
+  PlayerConfigOverlayElement.style.display = 'block';
+  backDropElement.style.display = 'block';
 
 }
 
 
 
 function closePlayerConfig() {
-     PlayerConfigOverlayElement.style.display = 'none'
-     backDropElement.style.display='none'
-
-    
+  PlayerConfigOverlayElement.style.display = 'none';
+  backDropElement.style.display = 'none';
+  formElement.firstElementChild.classList.remove('error'); 
+  errorsOutputElement.textContent = '';  
 }
 
 function savePlayerConfig(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-  const enteredPlayerName = formData.get('username').trim();
+    const enteredPlayerName = formData.get('username').trim();
 
 
-  if (!enteredPlayerName) {
-    errorsOutputElement.textContent = 'Please enter a valid name!';
-    return;
+    if (!enteredPlayerName) {
+       event.target.firstElementChild.classList.add('error');
+       errorsOutputElement.textContent = 'Please enter a valid name!';
+      return;
   }
 
     
