@@ -33,6 +33,7 @@ function selectGameField(event) {
 
     const winnerId = checkForGameOver();
     console.log(winnerId)
+    currentRound++
 
     switchPlayer();   
 }
@@ -82,6 +83,10 @@ function checkForGameOver() {
         gameData[1][1] === gameData[2][0]
     ) {
         return gameData[0][2];
+    }
+
+    if (currentRound === 9) {
+        return -1;
     }
 
     return 0;
