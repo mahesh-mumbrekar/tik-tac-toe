@@ -8,3 +8,9 @@ function startNewGame() {
     gameAreaElement.style.display = 'block'
     
 }
+
+
+function selectGameField(event) {
+    event.target.textcontent = players[activePlayer].symbol;
+    
+}
