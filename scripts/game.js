@@ -24,13 +24,65 @@ function selectGameField(event) {
    
     const selectedColumn = event.target.dataset.col - 1;
     const selectedRow = event.target.dataset.row - 1;
-    if (gameData[selectedColumn][selectedRow] > 0) {
-          return;
+    if (gameData[selectedRow][selectedColumn] > 0) {
+        return;
     }
     event.target.textContent = players[activePlayer].symbol;
     event.target.classList.add('disabled');
-    gameData[selectedColumn][selectedRow] = activePlayer + 1;
-    console.log(gameData)
+    gameData[selectedRow][selectedColumn] = activePlayer + 1;
+
+    const winnerId = checkForGameOver();
+    console.log(winnerId)
 
     switchPlayer();   
+}
+
+
+
+function checkForGameOver() {
+    //for checking rows
+    for (let i = 0; i < 3; i++) {
+        if (
+            gameData[i][0] > 0 &&
+            gameData[i][0] === gameData[i][1] &&
+            gameData[i][1]===gameData[i][2]
+        ) {
+            return gameData[i][0];
+        }
+        
+    }
+
+    // for cheaking column
+    for (let i = 0; i < 3; i++) {
+        if (
+            gameData[0][i] > 0 &&
+            gameData[0][i] === gameData[1][i] &&
+            gameData[1][i] === gameData[2][i]
+        ) {
+            return gameData[0][i];
+        }
+        
+    }
+     
+    //for checking diagonal:top left to right bottom
+
+    if (
+        gameData[0][0] > 0 &&
+        gameData[0][0] === gameData[1][1] &&
+        gameData[1][1] === gameData[2][2]
+    ) {
+        return gameData[0][0];
+    }
+     
+    // for checking diagonal:top right to left bottom
+
+    if (
+        gameData[0][2] > 0 &&
+        gameData[0][2] === gameData[1][1] &&
+        gameData[1][1] === gameData[2][0]
+    ) {
+        return gameData[0][2];
+    }
+
+    return 0;
 }
