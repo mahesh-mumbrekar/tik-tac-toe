@@ -16,7 +16,8 @@ const players = [
 const PlayerConfigOverlayElement = document.getElementById('config-overlay');
 const backDropElement = document.getElementById('backdrop');
 const formElement = document.querySelector('form');
-const errorsOutputElement= document.getElementById('config-errors')
+const errorsOutputElement = document.getElementById('config-errors')
+const activePlayerNameElement = document.getElementById('active-player-name');
 
 const editPlayer1BtnElement = document.getElementById('edit-player-1-btn');
 const editPlayer2BtnElement = document.getElementById('edit-player-2-btn');
@@ -24,6 +25,7 @@ const cancelConfigBtnElement = document.getElementById('cancel-config-btn');
 const startNewGameBtnElement = document.getElementById('start-game-btn');
 const gameAreaElement = document.getElementById('active-game');
 const gameFieldElements = document.querySelectorAll('#game-board li');
+
 
 
 
