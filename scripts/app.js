@@ -22,7 +22,7 @@ const editPlayer2BtnElement = document.getElementById('edit-player-2-btn');
 const cancelConfigBtnElement = document.getElementById('cancel-config-btn');
 const startNewGameBtnElement = document.getElementById('start-game-btn');
 const gameAreaElement = document.getElementById('active-game');
-const gameFieldElement = document.querySelectorAll('#game-board li');
+const gameFieldElements = document.querySelectorAll('#game-board li');
 
 
 
@@ -32,4 +32,8 @@ cancelConfigBtnElement.addEventListener('click', closePlayerConfig);
 backDropElement.addEventListener('click', closePlayerConfig);
 formElement.addEventListener('submit', savePlayerConfig);
 startNewGameBtnElement.addEventListener('click', startNewGame);
+
+for (const gameFieldElement of gameFieldElements) {
+    gameFieldElement.addEventListener('click', selectGameField);
+}
 
