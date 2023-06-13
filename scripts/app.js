@@ -32,6 +32,7 @@ const cancelConfigBtnElement = document.getElementById('cancel-config-btn');
 const startNewGameBtnElement = document.getElementById('start-game-btn');
 const gameAreaElement = document.getElementById('active-game');
 const gameFieldElements = document.querySelectorAll('#game-board li');
+const gameOverElement = document.getElementById('game-over');
 
 
 
