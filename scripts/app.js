@@ -28,4 +28,5 @@ editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
 cancelConfigBtnElement.addEventListener('click', closePlayerConfig);
 backDropElement.addEventListener('click', closePlayerConfig);
 formElement.addEventListener('submit', savePlayerConfig);
+startNewGameBtnElement.addEventListener('click', startNewGame);
 
