@@ -43,3 +43,5 @@ function savePlayerConfig(event) {
   const enteredPlayername = event.target.elements.playername.value;
   console.log(enteredPlayername);
 }*/
+
+

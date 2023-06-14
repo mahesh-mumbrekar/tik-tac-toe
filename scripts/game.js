@@ -1,8 +1,33 @@
+function resetGameStatus() {
+    activePlayer = 0;
+    currentRound = 1;
+    gameOverElement.firstElementChild.innerHTML = 'You Won,<span id="winner-name">PLAYER NAME</span>!'
+    
+    for (i = 0; i < 3; i++){
+        for (j = 0; j < 3; j++){
+            gameData[i][j] = 0;
+        }
+    }
+
+    for (i = 0; i < 9; i++){
+        gameFieldElements[i].textContent = '';
+       gameFieldElements[i].classList.remove('disabled')
+    }
+    gameOverElement.style.display='none'
+}
+    
+
+
+
+
 function startNewGame() {
     if (players[0].name === '' || players[1].name === '') {
         alert('Plese set custom player name to  both players!')
         return;
     } 
+
+    resetGameStatus();
+
         
      activePlayerNameElement.textContent = players[activePlayer].name;
     
@@ -35,7 +60,7 @@ function selectGameField(event) {
     if (winnerId !== 0) {
         endGAME(winnerId)
     }
-    
+
     currentRound++
 
     switchPlayer();   
